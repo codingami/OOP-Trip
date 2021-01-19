@@ -1,8 +1,10 @@
 package org.example;
 
 import org.example.exceptions.NoFlyListException;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import static org.junit.Assert.*;
 public class TravelerTest {
 
     Traveler traveler;
+    Destination destination;
 
     @Before
     public void setUp() {
@@ -22,7 +25,7 @@ public class TravelerTest {
         Double money = 50.00;
         List<Destination> placesVisited = new ArrayList<>();
         placesVisited.add(new Destination("Switzerland", 4011.00, 0.15, false));
-        boolean noFlyList = false;
+        boolean noFlyList = false || true;
         CovidResults covidResults = new CovidResults(new Date(), false);
 
         traveler = new Traveler(name, passPortNo, money, placesVisited, noFlyList, covidResults);
@@ -31,6 +34,7 @@ public class TravelerTest {
 
     @Test
     public void bookATripTest() {
+
     }
 
     @Test
@@ -67,6 +71,7 @@ public class TravelerTest {
 
     @Test(expected = NoFlyListException.class)
     public void NoFlyListTrue() {
+    //boolean noFlyList = true;
     traveler.noFlyListTrue();
 
     }
@@ -74,8 +79,10 @@ public class TravelerTest {
     @Test
     public void NoFlyListFalse() {
 
-        Boolean expected = false;
-        Boolean actual = traveler.isNoFlyList();
+        boolean expected = false;
+        boolean actual = traveler.noFlyListFalse();
+
+        Assert.assertEquals(expected, actual);
 
     }
 

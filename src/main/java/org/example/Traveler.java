@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.example.exceptions.InfectionException;
 import org.example.exceptions.NoFlyListException;
 
 import java.util.List;
@@ -66,11 +67,19 @@ public class Traveler {
         }
     }
 
+    public boolean noFlyListFalse() {
+        if (noFlyList == false) {
+            System.out.println("Yay I can fly!");
+        }
+        return noFlyList;
+    }
+
     public Boolean isNoFlyList() {
         return noFlyList;
     }
 
     public void setNoFlyList(boolean noFlyList) {
+
         this.noFlyList = noFlyList;
     }
 
