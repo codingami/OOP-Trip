@@ -67,7 +67,7 @@ public class TravelerTest {
 
     @Test(expected = NoFlyListException.class)
     public void NoFlyListTrue() {
-
+    traveler.noFlyListTrue();
 
     }
 
