@@ -25,7 +25,7 @@ public class TravelerTest {
         Double money = 50.00;
         List<Destination> placesVisited = new ArrayList<>();
         placesVisited.add(new Destination("Switzerland", 4011.00, 0.15, false));
-        boolean noFlyList = false || true;
+        boolean noFlyList = false;
         CovidResults covidResults = new CovidResults(new Date(), false);
 
         traveler = new Traveler(name, passPortNo, money, placesVisited, noFlyList, covidResults);
@@ -71,7 +71,7 @@ public class TravelerTest {
 
     @Test(expected = NoFlyListException.class)
     public void NoFlyListTrue() {
-    //boolean noFlyList = true;
+    traveler.setNoFlyList(true);
     traveler.noFlyListTrue();
 
     }

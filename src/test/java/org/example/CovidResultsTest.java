@@ -13,7 +13,7 @@ public class CovidResultsTest {
     @Test(expected = InfectionException.class)
     public void covidPositive() {
         CovidResults covidResults = new CovidResults(new Date(), true);
-        
+        covidResults.covidPositive();
     }
 
     @Test
